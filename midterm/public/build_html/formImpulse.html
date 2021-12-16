@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>freedom form</title>
+        <link rel="stylesheet" href="/styles/formStyle.css">
+    </head>
+
+    <body>
+        <header>
+            <img class = "logo" src="/pictures/gundam.jpeg" alt="welcome to home of gundam!!!">
+                <h1>Gundam!!!</h1>
+                <span class="subheader">Strike Freedom</span>
+            <nav class="menubar">
+                <ul class="menu">
+                    <li>
+                        <button type="button">Mechamic</button>
+                        <ul class="submenu">
+                            <li><a href="/info_html/freedomInfo.html">Freedom Gundam</a></li>
+                            <li><a href="/info_html/impulseInfo.html">Impulse Gundam</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button">Character</button>
+                        <ul class="submenu">
+                            <li><a href="/info_html/kirainfo.html">Kira Yamato</a></li>
+                            <li><a href="/info_html/athruninfo.html">Athrun Zala</a></li>
+                            
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            
+        </header>
+
+        <main class="main-content">
+
+            <form class="create-form" action="/form" method="POST">
+                <label class="label_mech_name">
+                    <span class="label_mech_name_span">Enter your Gundam's name:</span>
+                    <input type="text" class="mech_name" name="label_mech_name" 
+                    placeholder="ex: Freedom" pattern="[a-z]{*}[A-Z]{*}">
+                </label>
+
+                <label class="label_person_name">
+                    <span class="label_person_name_span">Enter your First name:</span>
+                    <input type="text" class="person_name" id="fn" name="label_person_name_input" placeholder="ex: Alex" minlength="1" maxlength="10" required >
+                    <span class="validity" id="validity2"></span>
+            
+                </label>
+
+                <label class="label_person_age">
+                    <span class="label_person_age_span">Enter your age:</span>
+                    <input type="text" class="person_age" name="label_person_age_input">
+                    
+                </label>
+
+                <label class="label_person_lastName">
+
+                    <span class="label_person_name_span">Last name:</span>
+                    <input type="text" class="person_name" id="ln" name="label_person_name_input" required placeholder="ex: jill" minlength="1" maxlength="10" >
+                    <span class="validity" id="validity1"></span>
+
+                </label>
+
+
+                <label class="weapon">
+                    <span class="weapon_span">Carrying Weapon:</span>
+
+                    <select name="weapon_dropbox" id="weapon_select">
+                        <option value="0" selected>Please select your weapon</option>
+                        <option value="1">MMI-GAU2 "Picus" 76mm CIWS</option>
+                        <option value="2">M100 "Balaena" Plasma Beam Cannon</option>
+                        <option value="3">MA-M01 "Lacerta" Beam Saber</option>
+                    </select>
+
+                </label>
+                
+
+                <label class="pilot">
+                    <span class="pilot_span">Please select your pilot:</span>
+                    <select name="pilot_dropbox" id="pilot_select">
+                        <option value="0" selected>Please select your pilot</option>
+                        <option value="1">Kira Yamato</option>
+                        <option value="2">Athrun Zala</option>
+                    </select>
+                </label>
+
+
+                <label class="email">
+                    <span class="email_span">Do you want to receive our email?</span>
+                    <input type="checkbox" class="email_checkbox" name="email">
+                    
+                    <span class="email_span1">yes!!!</span>
+                    <input type="checkbox" class="email_checkbox" name="email">
+                    
+                    <span class="email_span2">no ): !!!</span>
+
+                </label>
+
+                <button class="form_submit" type="submit">submit</button>
+
+            </form>
+
+            
+        </main>
+        
+        <ul class="footerList">
+            <li><footer>Image from: dreafmstime.com | License: Unknown</footer></li>
+            <li><a href="../index.html">click here to go to home page!</a></li>
+            
+        </ul>
+
+        <ul class="footerPicUl">
+            <img class="footerPic" src="/pictures/buildFooter.jpeg" alt="build_personal_gundam">
+        </ul>
+
+        <script src="/jsFiles/form.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,691 @@
+*{
+    box-sizing: border-box;
+    background-color:rgba(238, 238, 238, 0.637);
+}
+
+
+/* mobile sizing */
+@media (max-width: 950px){
+body {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "logo header"
+    "logo subheader"
+    "logo menubar";
+}
+
+header ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+header .logo {
+    grid-area: logo;
+
+    width: 6rem;
+    height: auto;
+}
+
+header h1 {
+    grid-area: header;
+
+    margin: 0;
+
+    text-align: center;
+    font-style: oblique;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: coral;
+}
+
+header .subheader {
+    grid-area: subheader;
+
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+
+    color: blueviolet;
+}
+
+.menubar {
+    grid-area: menubar;
+
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: .1rem;
+    border-style: solid;
+}
+
+.menubar > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu > li{
+    padding: 0 3rem;
+    width: 100%;
+    position: relative;
+}
+
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    background-color: rgb(53, 71, 44);
+
+    transition: max-height 2s;
+}
+
+.submenu a {
+    display: inline-block;
+
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+
+    color:seashell;
+}
+
+.submenu a:hover {
+    background-color:rgb(43, 37, 37);
+}
+.menu button {
+    background-color: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 1.5rem;
+
+    color: orange;
+}
+
+.menu > li {
+    width: fit-content; 
+}
+
+.menu > li:hover {
+    background-color: pink;
+}
+
+.menu > li:focus-within .submenu,
+.menu > li:hover .submenu{
+    width: 100%;
+
+    max-height: 90vh;
+    visibility: visible;
+}
+
+.localnav {
+    margin: 0;
+    grid-area: localnav;
+
+    padding: 0.2rem;
+    text-align: center;
+    background-color:chocolate;
+    height: auto;
+}
+
+.localnav ul{
+    display: flex;
+    flex-direction: column;
+
+    position: inherit;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.localnav li {
+    padding: 1.5rem 0.25rem;
+}
+
+.localnav a{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+.localnav a:hover {
+    color: red;
+}
+
+main {
+    grid-area: main;
+}
+
+form {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    "box1"
+    "box2"
+    "age"
+    "box3"
+    "select1"
+    "select2"
+    "checkbox"
+    "sub1";
+
+    gap: 4px;
+
+    font-family: sans-serif;
+    margin: 1rem;
+
+    background-color: burlywood;
+}
+
+form label{
+    padding: 1rem;
+
+    border-style: solid;
+    border-color: black;
+    border-width: .1rem;
+    
+}
+
+label span{
+    background-color: transparent;
+}
+
+.label_mech_name{
+    grid-area: box3;
+}
+
+.label_person_name{
+    grid-area: box1;
+}
+
+.label_person_lastName{
+    grid-area: box2;
+}
+
+.label_person_age{
+    grid-area: age;
+}
+
+
+.weapon{
+    grid-area: select1;
+}
+
+.pilot{
+    grid-area: select2;
+}
+
+.email{
+    grid-area: checkbox;
+}
+
+.form_submit {
+    grid-area: sub1;
+
+    color: rgb(241, 142, 106);
+    background-color: rgb(61, 58, 6);
+    width: 20%;
+
+    padding:10px;
+    border:none;
+    background-color:grey;
+    color:rgb(122, 115, 115);
+    font-weight:600;
+    border-radius:10px;
+    width:5rem;
+    
+    margin-left: 47%;
+    margin-bottom: .3rem;
+    position: inherit;
+}
+
+.form_submit:valid {
+    grid-area: sub1;
+
+    color: rgb(241, 142, 106);
+    background-color: rgb(61, 58, 6);
+    width: 20%;
+
+    padding:10px;
+    border:none;
+    background-color:#3F51B5;
+    color:#fff;
+    font-weight:600;
+    border-radius:10px;
+    width:5rem;
+    
+    margin-left: 47%;
+    margin-bottom: .3rem;
+    position: inherit;
+}
+
+input:required {
+    border-color: #f80000;
+    border-width: 2px;
+  }
+  
+input:required:invalid {
+    border-color: #880a0a;
+    border-style:solid;
+  }
+
+  input:valid{
+      border-style: solid;
+      border-color: black;
+  }
+  
+  .person_name ~ .validity {
+    padding-right: 30px;
+  }
+  
+  .person_name:invalid~.validity:after {
+    position: absolute; 
+    content: '✖';
+    color: rgb(184, 4, 4);
+    padding-left: 5px;
+  }
+  
+  .person_name:valid~.validity:after {
+    position: absolute;
+    content: '✓';
+    padding-left: 5px;
+  }
+
+
+  .footerPicUl{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+  }
+
+
+.footerPicUl .footerPic{
+    width: 45rem;
+    height: auto;
+
+    left: 0;
+
+    align-self: center;
+}
+
+  .footerList{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.footerList li{
+    align-self: center;
+}
+}
+
+/* Desktop sizing */
+@media (min-width: 950px){
+body {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "footer footer";
+
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+    "logo header"
+    "logo subheader"
+    "logo menubar";
+}
+
+header ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+header .logo {
+    grid-area: logo;
+
+    width: 6rem;
+    height: auto;
+}
+
+header h1 {
+    grid-area: header;
+
+    margin: 0;
+
+    text-align: center;
+    font-style: oblique;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: coral;
+}
+
+header .subheader {
+    grid-area: subheader;
+
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+
+    color: blueviolet;
+}
+
+.menubar {
+    grid-area: menubar;
+
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: .1rem;
+    border-style: solid;
+}
+
+.menubar > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu > li{
+    padding: 0 3rem;
+    width: 100%;
+    position: relative;
+}
+
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    background-color: rgb(53, 71, 44);
+
+    transition: max-height 2s;
+}
+
+.submenu a {
+    display: inline-block;
+
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+
+    color:seashell;
+}
+
+.submenu a:hover {
+    background-color:rgb(43, 37, 37);
+}
+.menu button {
+    background-color: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 1.5rem;
+
+    color: orange;
+}
+
+.menu > li {
+    width: fit-content; 
+}
+
+.menu > li:hover {
+    background-color: pink;
+}
+
+.menu > li:focus-within .submenu,
+.menu > li:hover .submenu{
+    width: 100%;
+
+    max-height: 90vh;
+    visibility: visible;
+}
+
+.localnav {
+    margin: 0;
+    grid-area: localnav;
+
+    padding: 0.2rem;
+    text-align: center;
+    background-color:chocolate;
+    height: auto;
+}
+
+.localnav ul{
+    display: flex;
+    flex-direction: column;
+
+    position: inherit;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.localnav li {
+    padding: 1.5rem 0.25rem;
+}
+
+.localnav a{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+.localnav a:hover {
+    color: red;
+}
+
+main {
+    grid-area: main;
+}
+
+form {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "box1 box2"
+    "box3 age"
+    "select1 select2"
+    "checkbox checkbox"
+    "sub1 sub1";
+
+    gap: 4px;
+
+    font-family: sans-serif;
+    margin: 1rem;
+
+    background-color: burlywood;
+}
+
+form label{
+    padding: 1rem;
+
+    border-style: solid;
+    border-color: black;
+    border-width: .1rem;
+    
+}
+
+label span{
+    background-color: transparent;
+}
+
+.label_mech_name{
+    grid-area: box2;
+}
+
+.label_person_name{
+    grid-area: box1;
+}
+
+.labei_person_age{
+    grid-area: age;
+}
+
+.label_person_lastName{
+    grid-area: box3;
+
+    display: inline-block;
+}
+
+.weapon{
+    grid-area: select1;
+}
+
+.pilot{
+    grid-area: select2;
+}
+
+.email{
+    grid-area: checkbox;
+}
+
+.form_submit {
+
+    grid-area: sub1;
+
+    padding:10px;
+    border:none;
+
+    background-color:grey;
+    color:rgb(151, 146, 146);
+
+    font-weight:600;
+
+    border-radius:10px;
+    width:5rem;
+    
+    margin-left: 47%;
+    margin-bottom: .3rem;
+
+    position: inherit;
+}
+
+.form_submit:valid {
+    grid-area: sub1;
+
+    padding:10px;
+    border:none;
+
+    background-color:#3F51B5;
+    color:#fff;
+
+    font-weight:600;
+
+    border-radius:10px;
+    width:5rem;
+    
+    margin-left: 47%;
+    margin-bottom: .3rem;
+
+    position: inherit;
+    
+}
+
+input:required {
+    border-color: #f80000;
+    border-width: 2px;
+  }
+  
+input:required:invalid {
+    border-color: #880a0a;
+  }
+
+  input:valid{
+    border-style: solid;
+    border-color: black;
+}
+
+.person_name:invalid{
+    border-color: red;
+    border-style: solid;
+}
+  .person_name ~ .validity {
+    padding-right: 30px;
+  }
+  
+  .person_name:invalid~.validity:after {
+    position: absolute; 
+    content: '✖';
+
+    color: rgb(184, 4, 4);
+
+    padding-left: 5px;
+  }
+  
+  .person_name:valid~.validity:after {
+    position: absolute;
+
+    content: '✓';
+
+    padding-left: 5px;
+  }
+
+
+  .footerPicUl{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.footerPicUl .footerPic{
+  width: 60rem;
+  height: auto;
+
+  left: 0;
+
+  align-self: center;
+}
+
+
+  .footerList{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.footerList li{
+    align-self: center;
+}
+}

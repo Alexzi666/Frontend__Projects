@@ -1,0 +1,302 @@
+*{
+  box-sizing: border-box;
+  background-color: gainsboro;
+}
+
+
+@media (max-width: 950px){
+
+  .app{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+
+    grid-template-areas:
+    "x x x x x x x x x x x x"
+    "a a a a a a a a a a a a"
+    "b b b b b b b b b b b b";
+  }
+
+  .header__section{
+    grid-area: x;
+
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "k k k p p p p p p p p p"
+    "s s s s s s s s s s s s"
+    "b b b b b b c c c c c c";
+  }
+
+
+
+  .header__img{
+    grid-area: k;
+    height: auto;
+    width: 10vh;
+  }
+
+  .header__section > h1{
+    grid-area: s;
+    font-family: 'indie flower';
+
+    font-size: 170%;
+
+    color: orange;
+
+    margin: 0;
+    margin-bottom: 1rem;
+
+  }
+  
+  .skip__link{
+    grid-area: c;
+    align-self: end;
+  }
+
+  .header__div{
+    grid-area: a;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+    "p p p p p p p p p p p p"
+    "s s s s s s s s s s s s";
+  }
+
+  .menu{
+    grid-area: p;
+  }
+
+  .main__div{
+    grid-area: s;
+  }
+
+  .privacy__policy__page{
+    grid-area: s;
+  }
+
+  .main-content{
+    grid-area: s;
+  }
+
+
+  .carousel__div{
+    grid-area: s;
+  }
+
+
+  .footer__div{
+    grid-area: b;
+
+    position: relative;
+  }
+
+  .footer__img{
+    width: 100%;
+    height: auto;
+  }
+
+  .footer__statement{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+  }
+
+  .footer__statement > li{
+    margin-bottom: .5rem;
+  }
+
+
+  .insta__pic{
+    position:absolute;
+
+    bottom: 1rem;
+    
+    right: 3rem;
+
+    width: 2rem;
+    height: 2rem;
+  }
+
+}
+@media (min-width: 950px){
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+}
+
+.main__div{
+  height: 100%;
+}
+
+.header__section{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas:
+    "a x x x c c b b";
+
+  border-bottom: 5px solid wheat;
+}
+
+.header__section h1 {
+  color: black;
+
+  text-align: center;
+
+  font-family: 'Indie Flower', cursive;
+
+  width:fit-content;
+
+  grid-area: x;
+
+}
+
+.skip__link{
+  grid-area: b;
+
+  color:darkred;
+  text-decoration: none;
+
+  height: fit-content;
+  width: fit-content;
+
+  font-size: 25px;
+  font-style: italic;
+
+  align-self: end;
+}
+
+.header__img{
+    grid-area: a;
+
+    height: 100%;
+    width: 90%;
+
+}
+
+.menu{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+.menu__li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  
+  width:11rem;
+  height: 2rem;
+  list-style-type: none;
+  background-color: #EEEEEE;
+  padding: 8px 25px;
+  margin-bottom: .3rem;
+
+  text-align: center;
+
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+
+  align-self: center;
+}
+
+.menu__link {
+
+  color:black;
+
+  font-style: normal;
+  font-family: 'PT Sans', sans-serif;
+
+  background-color: transparent;
+
+  text-decoration: none;
+
+  margin-top: auto;
+}
+
+.footer__div{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+  grid-auto-rows: 100px;
+  grid-template-areas:
+    "x x x x x x x x b b b b";
+
+}
+
+.footer__img{
+  grid-area: x;
+}
+
+.footer__statement{
+  grid-area: b;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer__statement li{
+  position: relative;
+}
+
+.insta__pic{
+  position:absolute;
+
+  overflow: hidden;
+
+  top: 0;
+  left: 16rem;
+  
+  width: 3rem;
+  height: auto;
+}
+
+.insta__link {
+  background-color: transparent;
+  border: none;
+}
+
+.insta__link:hover {
+  position:absolute;
+  top: 0;
+  left: 0;
+  overflow: 0;
+
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+}

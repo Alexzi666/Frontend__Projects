@@ -1,0 +1,15 @@
+.privacy__outter__page{
+    grid-area: s;
+
+    position: relative;
+}
+
+.privacy__policy__page{
+    position: relative;
+
+    margin: 2rem;
+
+    border: 1px solid black;
+
+    padding: 1rem;
+}

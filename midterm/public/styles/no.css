@@ -1,0 +1,193 @@
+
+*{
+    box-sizing: border-box;
+    background-color:rgba(238, 238, 238, 0.637);
+}
+
+body {
+    display: grid;
+    grid-template-rows: "auto 1fr auto";
+    grid-template-columns: "auto 1fr";
+    grid-template-areas: 
+    "header header"
+    "localnav main"
+    "footer footer";
+
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "logo header"
+    "logo subheader"
+    "logo menubar";
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+header .logo {
+    grid-area: logo;
+
+    width: 6rem;
+    height: auto;
+}
+
+header h1 {
+    grid-area: header;
+
+    margin: 0;
+
+    text-align: center;
+    font-style: oblique;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: coral;
+}
+
+header .subheader {
+    grid-area: subheader;
+
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+
+    color: blueviolet;
+}
+
+.menubar {
+    grid-area: menubar;
+}
+
+.menubar > ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu > li{
+    padding: 0 3rem;
+    width: 100%;
+    position: relative;
+}
+
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    background-color: rgb(53, 71, 44);
+
+    transition: max-height 2s;
+}
+
+.submenu a {
+    display: inline-block;
+
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+
+    color:seashell;
+}
+
+.submenu a:hover {
+    background-color:rgb(43, 37, 37);
+}
+.menu button {
+    background-color: transparent;
+    border: 0;
+    font: inherit;
+    font-size: 1.5rem;
+
+    color: orange;
+}
+
+.menu > li {
+    width: fit-content; 
+}
+
+.menu > li:hover {
+    background-color: pink;
+}
+
+.menu > li:focus-within .submenu,
+.menu > li:hover .submenu{
+    width: 100%;
+
+    max-height: 90vh;
+    visibility: visible;
+}
+
+.localnav {
+    margin: 0;
+    grid-area: localnav;
+
+    padding: 0.2rem;
+    text-align:left;
+    background-color:chocolate;
+    height: auto;
+}
+
+.localnav ul{
+    display: flex;
+    flex-direction: column;
+
+    position: inherit;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.localnav li {
+    padding: 1.5rem 0.25rem;
+}
+
+.localnav a{
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+.localnav a:hover {
+    color: red;
+}
+
+main {
+    grid-area:main;
+    padding: 2rem;
+    padding-top: 1rem;
+    background-color: aqua;
+
+    text-align: center;
+}
+
+main .fir {
+    background-color: transparent;
+    color: rgb(102, 102, 101);
+}
+
+footer {
+    padding: 1rem;
+    grid-area: footer;
+
+    text-align: center;
+    font-size:larger;
+
+    background-color: blanchedalmond;
+
+    padding-left: 8rem;
+}

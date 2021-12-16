@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    text-align: center;
+
+    color: bisque;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+
+    background-color: bisque;
+}
+
+.posts > li{
+    height:auto;
+    padding: 1rem 0rem;
+
+    border-bottom: 0.2rem solid black;
+}
+
+.post_li{
+    display: flex;
+    flex-direction: column;
+}
+
+h2 > a {
+    color: brown;
+    
+    padding-bottom: 1rem;
+}
+
+.post_body{
+    color:steelblue;
+}
+
+.post_comment{
+    display: flex;
+    flex-direction: column;
+
+    list-style-type: none;
+}
+
+.comment_set {
+    padding-bottom: 1rem;
+    padding-top: 0.2rem;
+
+    border-bottom: .1rem solid rebeccapurple;
+}

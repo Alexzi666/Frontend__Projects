@@ -1,0 +1,274 @@
+ @media (max-width: 950px){
+
+    .carousel {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+    "x x x x x x x x"
+    "a b b b f c d d";
+    }
+
+    .carousel__content {
+      grid-area: x;
+    }
+
+    .carousel__control--previous {
+      grid-area: b;
+
+      margin-top: 0;
+    }
+
+    .carousel__control--next {
+      grid-area: c;
+
+      margin-top: 0;
+    }
+    
+    .carousel__slide-container { 
+      position: relative;
+    
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    
+      margin: 0;
+      padding: 0;
+    
+      list-style-type: none;
+    }
+    
+    .carousel__slide { 
+      position: absolute;
+      visibility: hidden;
+    }
+    
+    .carousel__slide--active { 
+      position: static;
+      visibility: visible;
+    }
+    
+    .carousel__img { 
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .carousel__control { 
+      min-width: 54px;
+      min-height: 54px;
+    }
+    
+    .carousel__img{
+        width: 100%;
+        height: auto;
+    }
+  
+  
+    .carousel__content{
+        width: fit-content;
+  
+        align-self: center;
+    }
+  
+  
+    .carousel__control{
+  
+      height: fit-content;
+      width: fit-content;
+  
+      margin-left: auto;
+      margin-right: auto;
+        background-color: transparent;
+  
+        border: none;
+  
+        cursor: pointer;
+    }
+  
+
+    .carousel__control:hover {
+      animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    
+    @keyframes shake {
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+  
+    .button__img{
+        width: 5rem;
+        height: auto;
+        
+    }
+  
+    .picc__div{
+        display: flex;
+    }
+  
+    .pic__text__top{
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+  
+      text-align: center;
+  
+      color: darkslategrey;
+    }
+  
+  
+    .pic__text__bot{
+      font-family: 'Indie Flower', cursive;
+      font-size: 22px;
+  
+      border-top: 3px solid yellow;
+      border-bottom: 3px solid yellow;
+  
+      color: darkslategrey;
+    }
+
+  }
+  
+  @media (min-width: 950px){
+  .carousel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .carousel__slide-container { 
+    position: relative;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  
+    margin: 0;
+    padding: 0;
+  
+    list-style-type: none;
+  }
+  
+  .carousel__slide { 
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .carousel__slide--active { 
+    position: static;
+    visibility: visible;
+  }
+  
+  .carousel__img { 
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .carousel__control { 
+    min-width: 54px;
+    min-height: 54px;
+  }
+  
+  .carousel__img{
+      width: 45rem;
+      height: auto;
+  }
+
+
+  .carousel__content{
+      width: fit-content;
+
+      align-self: center;
+  }
+
+
+  .carousel__control{
+
+    height: fit-content;
+    width: fit-content;
+
+    margin-top: 18rem;
+
+    margin-left: auto;
+    margin-right: auto;
+      background-color: transparent;
+
+      border: none;
+
+      cursor: pointer;
+  }
+
+  .carousel__control:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  .button__img{
+      width: 5rem;
+      height: auto;
+      
+  }
+
+  .picc__div{
+      display: flex;
+  }
+
+  .pic__text__top{
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+
+    text-align: center;
+
+    color: darkslategrey;
+  }
+
+
+  .pic__text__bot{
+    font-family: 'Indie Flower', cursive;
+    font-size: 22px;
+
+    border-top: 3px solid yellow;
+    border-bottom: 3px solid yellow;
+
+    color: darkslategrey;
+  }
+}
